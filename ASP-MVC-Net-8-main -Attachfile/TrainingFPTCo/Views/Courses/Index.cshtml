@@ -1,0 +1,128 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model TrainingFPTCo.Models.CourseViewModel
+
+@{
+    ViewData["title"] = "Courses";
+    ViewData["breadcrumb"] = "Home";
+    ViewData["breadcrumb_active"] = "Courses";
+    Layout = "~/Views/Shared/_LayoutTrainingStaff.cshtml";
+
+    bool saveStatus = Convert.ToBoolean(TempData["saveStatus"]);
+    bool statusUpdate = Convert.ToBoolean(TempData["updateStatus"]);
+    bool statusDel = Convert.ToBoolean(TempData["statusDel"]);
+}
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        <a class="btn btn-primary" href="@Url.Action("Add", "Courses")"> Add Course + </a>
+        <form asp-action="Index" method="get" class="my-3">
+            <div class="form-group mb-3">
+                Find by name: <input name="SearchString" value="@ViewData["keyword"]" />
+                <span> | </span>
+                <select name="Status">
+                    <option value=""> --- Choose Status ---</option>
+                    @if (ViewBag.Status == "Active")
+                    {
+                        <option value="Active" selected="selected"> Active </option>
+                    }
+                    else
+                    {
+                        <option value="Active"> Active </option>
+                    }
+
+                    @if (ViewBag.Status == "Deactive")
+                    {
+                        <option value="Deactive" selected="selected"> Deactive </option>
+                    }
+                    else
+                    {
+                        <option value="Deactive"> Deactive </option>
+                    }
+                </select>
+                <span> | </span>
+                <button type="submit" class="btn btn-primary btn-sm"> Search and Filter</button>
+                <span> | </span>
+                <a asp-action="Index"> Back to lists</a>
+            </div>
+        </form>
+
+        @if (TempData["saveStatus"] != null)
+        {
+            @if (saveStatus)
+            {
+                <div class="text-success my-3">
+                    Create new Course successfully
+                </div>
+            }
+            else
+            {
+                <div class="text-danger my-3">
+                    Create new Course failure
+                </div>
+            }
+        }
+        @if (TempData["updateStatus"] != null)
+        {
+            @if (statusUpdate)
+            {
+                <div class="text-success my-3"> Update successfully</div>
+            }
+            else if (!statusUpdate)
+            {
+                <div class="text-danger my-3"> Update Failure</div>
+            }
+        }
+
+        @if (TempData["statusDel"] != null)
+        {
+            @if (statusDel)
+            {
+                <div class="text-success my-3"> Delete successfully</div>
+            }
+            else if (!statusDel)
+            {
+                <div class="text-danger my-3"> Delete Failure</div>
+            }
+        }
+        <table class="my-3 table table-bordered table-striped">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Status</th>
+                    <th colspan="2" width="10%" class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CourseDetailsList)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.ViewCategoryName</td>
+                        <td width="10%">
+                            <img class="img-fluid" alt="@item.Name" src="/uploads/images/@item.ViewImageCourse" />
+                        </td>
+                        <td>@item.Description</td>
+                        <td>@item.StartDate</td>
+                        <td>@item.EndDate</td>
+                        <td>@item.Status</td>
+                        <td>
+                            <a class="btn btn-info" href="@Url.Action("Update", "Courses", new {id = @item.Id})">Edit</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" href="@Url.Action("Delete", "Courses", new {id = item.Id})">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

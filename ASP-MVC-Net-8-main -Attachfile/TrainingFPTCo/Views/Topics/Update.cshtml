@@ -1,0 +1,142 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model TrainingFPT.Models.TopicDetail
+
+@{
+    ViewData["Title"] = "Topic Page Update";
+    ViewData["namePage"] = "Topic Update";
+    ViewData["breadcrumb"] = "Home";
+    ViewData["breadcrumb_active"] = "Update Topic";
+    ViewBag.report = false;
+
+    Layout = "~/Views/Shared/_LayoutTrainingStaff.cshtml";
+}
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5> Update Topic</h5>
+            </div>
+            <div class="card-body">
+                <form enctype="multipart/form-data" asp-action="Update">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group mb-3">
+                                <label asp-for="Name"></label>
+                                <input type="text" asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                                @* id cua course *@
+                                <input type="hidden" asp-for="Id" />
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label>Course</label>
+                                <select class="form-control"
+                                        asp-for="CourseId"
+                                        asp-items="@(new SelectList(ViewBag.Courses,"Value", "Text"))">
+                                </select>
+                                <span asp-validation-for="CourseId"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Description"></label>
+                                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Status"></label>
+                                <select class="form-control" asp-for="Status">
+                                    <option value=""> -- Choose --</option>
+                                    <option value="Active"> Active </option>
+                                    <option value="Deactive"> Deactive </option>
+                                </select>
+                                <span asp-validation-for="Status"></span>
+                            </div>
+                        </div>
+
+                        <div class="com-sm-12 col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ViewPosterTopic"></label>
+                                <input type="file" asp-for="ViewPosterTopic" class="form-control" />
+                                <span asp-validation-for="ViewPosterTopic"></span>
+                                <img width="50%" class="img-fluid" src="/uploads/images/@Model.ViewPosterTopic" />
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Documents"></label>
+                                <input type="file" asp-for="Documents" class="form-control" />
+                                <span asp-validation-for="Documents"></span>
+                                <br />
+                                @if (Model.ViewDocuments != null)
+                                {
+                                    if (Model.ViewDocuments.EndsWith(".pdf"))
+                                    {
+                                        <embed src="/uploads/images/@Model.ViewDocuments" type="application/pdf" width="100%" height="600px" />
+                                    }
+                                    else if (Model.ViewDocuments.EndsWith(".mp4") || Model.ViewDocuments.EndsWith(".webm"))
+                                    {
+                                        <video controls width="50%" height="auto">
+                                            <source src="/uploads/images/@Model.ViewDocuments" type="video/mp4">
+                                            <source src="/uploads/images/@Model.ViewDocuments" type="video/webm">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    }
+                                    else if (Model.ViewDocuments.EndsWith(".mp3") || Model.ViewDocuments.EndsWith(".wav"))
+                                    {
+                                        <audio controls>
+                                            <source src="/uploads/images/@Model.ViewDocuments" type="audio/mpeg">
+                                            Your browser does not support the audio tag.
+                                        </audio>
+                                    }
+                                    else
+                                    {
+                                        <a href="/uploads/images/@Model.ViewDocuments">Download File</a>
+                                    }
+                                }
+                            </div>
+
+
+                            <div class="form-group mb-3">
+                                <label asp-for="AttachFile"></label>
+                                <input type="file" asp-for="AttachFile" class="form-control" />
+                                <span asp-validation-for="AttachFile"></span>
+                            </div>
+
+                            @if (!string.IsNullOrEmpty(Model.ViewAttachFile))
+                            {
+                                if (Model.ViewAttachFile.EndsWith(".pdf"))
+                                {
+                                    <embed src="/uploads/images/@Model.ViewAttachFile" type="application/pdf" width="100%" height="200px" />
+                                }
+                                else if (Model.ViewAttachFile.EndsWith(".mp4") || Model.ViewAttachFile.EndsWith(".webm"))
+                                {
+                                    <video controls width="100%" height="auto">
+                                        <source src="/uploads/images/@Model.ViewAttachFile" type="video/mp4">
+                                        <source src="/uploads/images/@Model.ViewAttachFile" type="video/webm">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                }
+                                else if (Model.ViewAttachFile.EndsWith(".mp3") || Model.ViewAttachFile.EndsWith(".wav"))
+                                {
+                                    <audio controls>
+                                        <source src="/uploads/images/@Model.ViewAttachFile" type="audio/mpeg">
+                                        Your browser does not support the audio tag.
+                                    </audio>
+                                }
+                                else
+                                {
+                                    <a href="/uploads/images/@Model.ViewAttachFile">Download AttachFile</a>
+                                }
+                            }
+
+
+                            <button class="btn btn-primary" type="submit"> Update </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

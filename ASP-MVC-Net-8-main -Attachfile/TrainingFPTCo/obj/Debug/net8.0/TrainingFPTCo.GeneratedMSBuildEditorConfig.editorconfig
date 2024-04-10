@@ -1,0 +1,155 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TrainingFPTCo
+build_property.RootNamespace = TrainingFPTCo
+build_property.ProjectDir = C:\Users\admin\Downloads\30 - Application Development\30 - Application Development\code AD\ASP-MVC-Net-8-main -Attachfile\TrainingFPTCo\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\admin\Downloads\30 - Application Development\30 - Application Development\code AD\ASP-MVC-Net-8-main -Attachfile\TrainingFPTCo
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Account/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Account/AddTrainingStaff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZGRUcmFpbmluZ1N0YWZmLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Account/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Account/DetailsTrainingStaff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxEZXRhaWxzVHJhaW5pbmdTdGFmZi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Account/IndexTrainingStaff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleFRyYWluaW5nU3RhZmYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Account/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Account/UpdateTrainingStaff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVcGRhdGVUcmFpbmluZ1N0YWZmLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Category/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Category/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Courses/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Courses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Courses/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Dashboard/IndexAdministrator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4QWRtaW5pc3RyYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Dashboard/IndexTrainee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4VHJhaW5lZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Dashboard/IndexTrainer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4VHJhaW5lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Dashboard/IndexTrainingstaff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4VHJhaW5pbmdzdGFmZi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Shared/_LayoutAdministrator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbmlzdHJhdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Shared/_LayoutLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Shared/_LayoutMain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRNYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Shared/_LayoutTrainingStaff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRUcmFpbmluZ1N0YWZmLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Topics/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNzXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Topics/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Topics/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNzXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/Downloads/30 - Application Development/30 - Application Development/code AD/ASP-MVC-Net-8-main -Attachfile/TrainingFPTCo/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-mwx2eus5z7

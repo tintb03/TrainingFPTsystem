@@ -1,0 +1,138 @@
+﻿@model TrainingFPTCo.Models.AccountViewModel
+
+@{
+    ViewData["title"] = "Accounts";
+    ViewData["breadcrumb"] = "Home";
+    ViewData["breadcrumb_active"] = "Account";
+    Layout = "~/Views/Shared/_LayoutAdministrator.cshtml";
+
+    bool statusAdd = Convert.ToBoolean(TempData["saveStatus"]);
+    bool statusDel = Convert.ToBoolean(TempData["statusDelete"]);
+    bool statusUpdate = Convert.ToBoolean(TempData["updateStatus"]);
+}
+
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+
+        <a class="btn btn-primary" href="@Url.Action("Add", "Account")"> Add new Account</a>
+        <form asp-action="Index" method="get" class="my-3">
+            <div class="form-actions no-color">
+                <p class="mb-0">
+                    Find by Username or FullName:<input value="@ViewData["currentFilter"]" type="text" name="SearchString" />
+                    <span> | </span>
+                    <select name="FilterStatus">
+                        <option value=""> -- Status --</option>
+                        @if (ViewBag.FilterStatus == "Active")
+                        {
+                            <option value="Active" selected="selected"> Active </option>
+                        }
+                        else
+                        {
+                            <option value="Active"> Active </option>
+                        }
+                        @if (ViewBag.FilterStatus == "Deactive")
+                        {
+                            <option value="Deactive" selected="selected"> Deactive </option>
+                        }
+                        else
+                        {
+                            <option value="Deactive"> Deactive </option>
+                        }
+                    </select>
+
+                    <span> | </span>
+                    <button type="submit" class="btn btn-primary btn-sm mb-0"> Filter and Search </button>
+                    <span> | </span>
+                    <a asp-action="Index"> Back To list </a>
+                </p>
+            </div>
+
+        </form>
+        @if (TempData["saveStatus"] != null)
+        {
+            @if (statusAdd)
+            {
+                <div class="text-success my-3"> Add Successfully </div>
+            }
+            else
+            {
+                <div class="text-danger my-3"> Add Failure </div>
+            }
+        }
+        @if (TempData["statusDelete"] != null)
+        {
+            @if (statusDel)
+            {
+                <div class="text-success my-3"> Delete Successfully </div>
+            }
+            else
+            {
+                <div class="text-danger my-3"> Delete Failure </div>
+            }
+        }
+        @if (TempData["updateStatus"] != null)
+        {
+            @if (statusUpdate)
+            {
+                <div class="text-success my-3"> Update Successfully </div>
+            }
+            else
+            {
+                <div class="text-danger my-3"> Update Failure </div>
+            }
+        }
+        <table class="table table-bordered table-striped mt-3">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Username</th>
+                    <th>ExtraCode</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+@*                     <th>FullName</th> *@
+@*                     <th>Birthday</th>
+                    <th>Gender</th> *@
+@*                     <th>Created At</th>
+                    <th>Updated At</th> *@
+                    <th colspan="3" width="10%">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.AccountDetailList)
+                {
+ @*                    @if (item.Role != null && item.Role.Name != "administrator") *@
+@*                     { *@
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Role?.Name</td>
+                            <td>@item.Role?.Status</td>
+                            <td>@item.Username</td>
+                            <td>@item.ExtraCode</td>
+                            <td>@item.Email</td>
+                            <td>@item.Phone</td>
+                            <td>@item.Address</td>
+@*                             <td>@item.FullName</td> *@
+@*                             <td>@item.Birthday</td>
+                            <td>@item.Gender</td> *@
+@*                             <td>@item.CreatedAt</td>
+                            <td>@item.UpdatedAt</td> *@
+                        <td>
+                            <a href="@Url.Action("Details", "Account", new {id = @item.Id})" class="btn btn-info">View</a>
+                        </td>
+                            <td>
+                                <a href="@Url.Action("Update", "Account", new {id = @item.Id})" class="btn btn-info">Edit</a>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Delete", "Account", new {id = @item.Id})" class="btn btn-danger">Delete</a>
+                            </td>
+
+                        </tr>
+@*                     } *@
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

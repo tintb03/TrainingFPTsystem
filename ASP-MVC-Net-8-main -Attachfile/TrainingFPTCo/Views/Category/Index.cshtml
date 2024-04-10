@@ -1,0 +1,123 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model TrainingFPTCo.Models.CategoryViewModel
+
+@{
+    ViewData["title"] = "Categories";
+    ViewData["breadcrumb"] = "Home";
+    ViewData["breadcrumb_active"] = "Category";
+    Layout = "~/Views/Shared/_LayoutTrainingStaff.cshtml";
+
+    bool statusAdd = Convert.ToBoolean(TempData["saveStatus"]);
+    bool statusDel = Convert.ToBoolean(TempData["statusDelete"]);
+    bool statusUpdate = Convert.ToBoolean(TempData["updateStatus"]);
+}
+
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+
+        <a class="btn btn-primary" href="@Url.Action("Add", "Category")"> Add new Category</a>
+        <form asp-action="Index" method="get" class="my-3">
+            <div class="form-actions no-color">
+                <p class="mb-0">
+                    Find by Name:<input value="@ViewData["currentFilter"]" type="text" name="SearchString" />
+                    <span> | </span>
+                    <select name="FilterStatus">
+                        <option value=""> -- Status --</option>
+                        @if (ViewBag.FilterStatus == "Active")
+                        {
+                            <option value="Active" selected="selected"> Active </option>
+                        }
+                        else
+                        {
+                            <option value="Active"> Active </option>
+                        }
+                        @if (ViewBag.FilterStatus == "Deactive")
+                        {
+                            <option value="Deactive" selected="selected"> Deactive </option>
+                        }
+                        else
+                        {
+                            <option value="Deactive"> Deactive </option>
+                        }
+                    </select>
+
+                    <span> | </span>
+                    <button type="submit" class="btn btn-primary btn-sm mb-0"> Filter and Search </button>
+                    <span> | </span>
+                    <a asp-action="Index"> Back To list </a>
+                </p>
+            </div>
+
+        </form>
+        @if (TempData["saveStatus"] != null)
+        {
+            @if (statusAdd)
+            {
+                <div class="text-success my-3"> Add Successfully </div>
+            }
+            else
+            {
+                <div class="text-danger my-3"> Add Failure </div>
+            }
+        }
+        @if (TempData["statusDelete"] != null)
+        {
+            @if (statusDel)
+            {
+                <div class="text-success my-3"> Delete Successfully </div>
+            }
+            else
+            {
+                <div class="text-danger my-3"> Delete Failure </div>
+            }
+        }
+        @if (TempData["updateStatus"] != null)
+        {
+            @if (statusUpdate)
+            {
+                <div class="text-success my-3"> Update Successfully </div>
+            }
+            else
+            {
+                <div class="text-danger my-3"> Update Failure </div>
+            }
+        }
+        <table class="table table-bordered table-striped mt-3">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Created At</th>
+                    <th colspan="2" width="10%">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CategoryDetailList)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td width="10%">
+                            <img class="img-fluid" src="/uploads/images/@item.PosterNameImage" alt="@item.Name" />
+                        </td>
+                        <td>@item.Description</td>
+                        <td>@item.Status</td>
+                        <td>@item.CreatedAt</td>
+                        <td>
+                            <a href="@Url.Action("Update", "Category", new {id = @item.Id})" class="btn btn-info">Edit</a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Delete", "Category", new {id = @item.Id})" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

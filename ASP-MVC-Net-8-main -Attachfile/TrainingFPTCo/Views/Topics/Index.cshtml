@@ -1,0 +1,194 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model TrainingFPT.Models.TopicsViewModel
+
+@{
+    ViewData["Title"] = "Topic Page";
+    ViewData["namePage"] = "Topic";
+    ViewData["breadcrumb"] = "Home";
+    ViewData["breadcrumb_active"] = "Topics";
+    ViewBag.report = false;
+
+    Layout = "~/Views/Shared/_LayoutTrainingStaff.cshtml";
+
+    bool saveStatus = Convert.ToBoolean(TempData["saveStatus"]);
+    bool statusUpdate = Convert.ToBoolean(TempData["updateStatus"]);
+    bool statusDel = Convert.ToBoolean(TempData["statusDel"]);
+}
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        <a class="btn btn-primary" href="@Url.Action("Add", "Topics")"> Add New Topic + </a>
+        <form asp-action="Index" method="get" class="my-3">
+            <div class="form-group mb-3">
+                Find by name: <input name="SearchString" value="@ViewData["keyword"]" />
+                <span> | </span>
+                Filter by status :
+                <select name="Status">
+                    <option value=""> --- Choose Status ---</option>
+                    @if (ViewBag.Status == "Active")
+                    {
+                        <option value="Active" selected="selected"> Active </option>
+                    }
+                    else
+                    {
+                        <option value="Active"> Active </option>
+                    }
+
+                    @if (ViewBag.Status == "Deactive")
+                    {
+                        <option value="Deactive" selected="selected"> Deactive </option>
+                    }
+                    else
+                    {
+                        <option value="Deactive"> Deactive </option>
+                    }
+                </select>
+                <span> | </span>
+                <button type="submit" class="btn btn-primary btn-sm"> Search and Filter</button>
+                <span> | </span>
+                <a asp-action="Index"> Back to lists</a>
+            </div>
+        </form>
+
+        @if (TempData["saveStatus"] != null)
+        {
+            @if (saveStatus)
+            {
+                <div class="text-success my-3">
+                    Create new Topic successfully
+                </div>
+            }
+            else
+            {
+                <div class="text-danger my-3">
+                    Create new Topic failure
+                </div>
+            }
+        }
+        @if (TempData["updateStatus"] != null)
+        {
+            @if (statusUpdate)
+            {
+                <div class="text-success my-3"> Update successfully</div>
+            }
+            else if (!statusUpdate)
+            {
+                <div class="text-danger my-3"> Update Failure</div>
+            }
+        }
+
+        @if (TempData["statusDel"] != null)
+        {
+            @if (statusDel)
+            {
+                <div class="text-success my-3"> Delete successfully</div>
+            }
+            else if (!statusDel)
+            {
+                <div class="text-danger my-3"> Delete failure</div>
+            }
+        }
+
+        <table class="my-3 table table-bordered table-striped">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Description</th>
+                    <th>Documents</th>
+                    <th>Download Documents</th>
+                    <th>AttachFile</th>
+                    <th>DownloadAttachFile</th>
+                    <th>PosterTopic</th>
+                    <th>Status</th>
+                    <th colspan="2" width="10%" class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.TopicDetailList)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td width="10%">@item.Name</td>
+                        <td>@item.viewCourseName</td>
+                        <td>@item.Description</td>
+
+                        <td width="10%">
+                            @if (!string.IsNullOrEmpty(item.ViewDocuments))
+                            {
+                                if (item.ViewDocuments.EndsWith(".pdf"))
+                                {
+                                    <embed src="/uploads/images/@item.ViewDocuments" type="application/pdf" width="100%" height="200px" />
+                                }
+                                else if (item.ViewDocuments.EndsWith(".mp4") || item.ViewDocuments.EndsWith(".webm"))
+                                {
+                                    <video controls width="100%" height="auto">
+                                        <source src="/uploads/images/@item.ViewDocuments" type="video/mp4">
+                                        <source src="/uploads/images/@item.ViewDocuments" type="video/webm">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                }
+                                else if (item.ViewDocuments.EndsWith(".mp3") || item.ViewDocuments.EndsWith(".wav"))
+                                {
+                                    <audio controls>
+                                        <source src="/uploads/images/@item.ViewDocuments" type="audio/mpeg">
+                                        Your browser does not support the audio tag.
+                                    </audio>
+                                }
+                                else
+                                {
+                                    <a href="/uploads/images/@item.ViewDocuments">Download File</a>
+                                }
+                            }
+                        </td>
+
+                        <td> <a href="/uploads/images/@item.ViewDocuments" download>Download Documents</a></td>
+
+                        <td width="25%">
+                            @if (!string.IsNullOrEmpty(item.ViewAttachFile))
+                            {
+                                if (item.ViewAttachFile.EndsWith(".pdf"))
+                                {
+                                    <embed src="/uploads/images/@item.ViewAttachFile" type="application/pdf" width="100%" height="200px" />
+                                }
+                                else if (item.ViewAttachFile.EndsWith(".mp4") || item.ViewAttachFile.EndsWith(".webm"))
+                                {
+                                    <video controls width="100%" height="auto">
+                                        <source src="/uploads/images/@item.ViewAttachFile" type="video/mp4">
+                                        <source src="/uploads/images/@item.ViewAttachFile" type="video/webm">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                }
+                                else if (item.ViewAttachFile.EndsWith(".mp3") || item.ViewAttachFile.EndsWith(".wav"))
+                                {
+                                    <audio controls>
+                                        <source src="/uploads/images/@item.ViewAttachFile" type="audio/mpeg">
+                                        Your browser does not support the audio tag.
+                                    </audio>
+                                }
+                                else
+                                {
+                                    <a href="/uploads/images/@item.ViewAttachFile">Download AttachFile</a>
+                                }
+                            }
+                        </td>
+                        <td> <a href="/uploads/images/@item.ViewAttachFile" download>Download AttachFile</a></td>
+                        <td width="25%">
+                            <img class="img-fluid" alt="@item.Name" src="/uploads/images/@item.ViewPosterTopic" />
+                        </td>
+                        <td>@item.Status</td>
+                        <td>
+                            <a class="btn btn-info" href="@Url.Action("Update", "Topics", new {id = @item.Id})">Edit</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger" href="@Url.Action("Delete", "Topics", new {id = item.Id})">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
